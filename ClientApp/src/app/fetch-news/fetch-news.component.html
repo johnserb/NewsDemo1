@@ -1,0 +1,22 @@
+<h1>News</h1>
+
+<p *ngIf="!newsItems"><em>Loading...</em></p>
+
+<table class='table' *ngIf="newsItems">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>By</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let newsItem of newsItems">
+      <td><a href="{{ newsItem.url }}" target="_blank">Select</a></td>
+      <td>{{ newsItem.title }}</td>
+      <td>{{ newsItem.by }}</td>
+      <td>{{ newsItem.type }}</td>
+    </tr>
+  </tbody>
+</table>
